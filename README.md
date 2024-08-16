@@ -1,3 +1,10 @@
+### 做了哪些修改？
+1. 汉化
+2. 可以使用docker-compose部署
+3. 添加get指令，可以实时获取天气信息
+4. 定时任务调整为上海时区6, 9, 12, 15, 18, 21点自动推送天气消息
+---
+
 <p align="center">
     <img src="https://repository-images.githubusercontent.com/559574279/ac1f8317-c07c-4c0f-a4e4-c49ae01237cd" alt="Open Weather Bot" width="640">
 </p>
