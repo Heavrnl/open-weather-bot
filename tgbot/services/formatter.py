@@ -93,9 +93,11 @@ class FormatWeather:
         else:
             wind_gust = ""
         time_zh = self.format_time(weather_data.time)
+
+        precipitation = precipitation.lstrip(", ").strip()
         current_weather: str = (
             f"<b>{city}  {time_zh}</b>\n"
-            + f"{emoji} {weather_data.weather_description}{precipitation}\n\n"
+            + f"{emoji} {weather_data.weather_description}\n\n"
             + f"🌡 <b>{weather_data.temp}{temp_units}</b>, "
             + _("体感温度", locale=lang_code)
             + f" <b>{weather_data.feels_like}{temp_units}</b>\n\n"
