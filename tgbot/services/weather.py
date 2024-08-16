@@ -15,6 +15,9 @@ from tgbot.services.parser import ParseWeather
 _ = i18n.gettext  # Alias for gettext method
 
 
+
+
+
 class WeatherAPI:
     """A class for working with the OpenWeatherMap API"""
 
@@ -28,6 +31,7 @@ class WeatherAPI:
         self._formatter = FormatWeather()
         self._parser = ParseWeather()
         self._image = DrawWeatherImage()
+
 
     @staticmethod
     async def _get_response_from_api(api_url: str) -> list | dict | None:
@@ -50,6 +54,8 @@ class WeatherAPI:
         :param lang_code: ISO 639-1 user language code
         :return: list of CityData objects
         """
+
+
         if isinstance(city_name_or_location, Location):
             api_url: str = (
                 f"{self._GEOCODING_API_URL}/reverse"
@@ -72,6 +78,8 @@ class WeatherAPI:
             return city_list
         return None
 
+
+
     async def get_current_weather(self, user_id: int) -> str:
         """
         Gets current weather data from the OpenWeatherMap service and outputs them in formatted form
@@ -79,23 +87,49 @@ class WeatherAPI:
         :param user_id: Telegram user ID
         :return: Formatted string with a description of the current weather or an error message
         """
+
         user_settings: UserWeatherSettings = await database.get_user_settings(user_id=user_id)
+
+        api_url: str = (
+            f"http://api.openweathermap.org/geo/1.0/reverse"
+            f"?lat={user_settings.latitude}&lon={user_settings.longitude}"
+            f"&limit=1&appid={self._api_key}"
+        )
+        raw_data: list | dict | None = await self._get_response_from_api(api_url=api_url)
+        zcity = user_settings.city  # 默认城市名为用户设置的城市名
+
+        # 检查 raw_data 是否为列表
+        if isinstance(raw_data, list):
+            for item in raw_data:
+                if 'local_names' in item and 'zh' in item['local_names']:
+                    zcity = item['local_names']['zh']
+                    break  # 找到后退出循环
+
+        # 检查 raw_data 是否为字典
+        elif isinstance(raw_data, dict):
+            if 'local_names' in raw_data and 'zh' in raw_data['local_names']:
+                zcity = raw_data['local_names']['zh']
+
+
+
+
         api_url: str = (
             f"{self._CURRENT_WEATHER_API_URL}"
             f"?lat={user_settings.latitude}"
             f"&lon={user_settings.longitude}"
-            f"&lang={user_settings.lang}"
+            f"&lang=zh_cn"
             f"&units={user_settings.units}"
             f"&appid={self._api_key}"
         )
         raw_data: list | dict | None = await self._get_response_from_api(api_url=api_url)
+        print(raw_data)
         if isinstance(raw_data, dict):
             weather_data: CurrentWeatherData | None = await self._parser.parse_current_weather(raw_data=raw_data)
             if weather_data:
                 current_weather: str = await self._formatter.format_current_weather(
                     weather_data=weather_data,
                     units=user_settings.units,
-                    city=user_settings.city,
+                    city=zcity,
                     lang_code=user_settings.lang,
                 )
                 return current_weather
@@ -114,7 +148,7 @@ class WeatherAPI:
             f"{self._WEATHER_FORECAST_API_URL}"
             f"?lat={user_settings.latitude}"
             f"&lon={user_settings.longitude}"
-            f"&lang={user_settings.lang}"
+            f"&lang=zh_cn"
             f"&units={user_settings.units}"
             "&cnt=8"
             f"&appid={self._api_key}"

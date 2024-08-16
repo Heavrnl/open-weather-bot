@@ -38,7 +38,7 @@ async def delete_previous_dialog_message(obj: Message | CallbackQuery) -> None:
 
 async def dialog_start(message: Message, state: FSMContext) -> None:
     """Handles command /start from the user"""
-    user_lang_code: str = message.from_user.language_code
+    user_lang_code: str = 'zh_cn'
     user_id: int = message.from_user.id
     await delete_previous_dialog_message(obj=message)
     await state.reset_state()
@@ -61,7 +61,7 @@ async def dialog_start(message: Message, state: FSMContext) -> None:
 
 async def dialog_select_city(message: Message) -> None:
     """Handling of city search results by geolocation or address"""
-    user_lang_code: str = message.from_user.language_code
+    user_lang_code: str = 'zh_cn'
     user_id: int = message.from_user.id
     await delete_previous_dialog_message(obj=message)
     await WeatherSetupDialog.previous()  # Block user input while city search is being processed

@@ -8,6 +8,7 @@ from aiogram.types import InputFile, Message
 from aiogram.utils.exceptions import BotBlocked, RetryAfter, UserDeactivated
 
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from pytz import timezone
 
 from tgbot.services.database import database, User
 from tgbot.services.weather import weather
@@ -42,6 +43,10 @@ async def schedule(dp: Dispatcher) -> None:
     """Creates a weather update task in the scheduler"""
     scheduler: AsyncIOScheduler = AsyncIOScheduler()
     scheduler.add_job(
-        func=update_weather_data, trigger="cron", hour="0, 3, 6, 9, 12, 15, 18, 21", args=(dp,), timezone="UTC"
+        func=update_weather_data,
+        trigger="cron",
+        hour="6, 9, 12, 15, 18, 21",
+        args=(dp,),
+        timezone=timezone('Asia/Shanghai')  # 设置时区为上海时间
     )
     scheduler.start()

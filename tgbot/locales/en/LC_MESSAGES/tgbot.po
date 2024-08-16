@@ -21,149 +21,149 @@ msgstr ""
 
 #: tgbot/handlers/admin.py:24
 msgid "Statistics"
-msgstr "Statistics"
+msgstr "统计"
 
 #: tgbot/handlers/admin.py:26
 msgid "Since beginning of the month"
-msgstr "Since beginning of the month"
+msgstr "自本月初以来"
 
 #: tgbot/handlers/admin.py:28
 msgid "requests have been spent"
-msgstr "requests have been spent"
+msgstr "请求已使用"
 
 #: tgbot/handlers/admin.py:32
 msgid "out of"
-msgstr "out of"
+msgstr "来自"
 
 #: tgbot/handlers/admin.py:34
 msgid "Users in the database"
-msgstr "Users in the database"
+msgstr "数据库中的用户"
 
 #: tgbot/handlers/dialog.py:47
 msgid "Let's set the weather!"
-msgstr "Let's set the weather!"
+msgstr "让我们设置天气吧！"
 
 #: tgbot/handlers/dialog.py:49 tgbot/handlers/dialog.py:102
 msgid "Write the name of the city or send your coordinates"
-msgstr "Write the name of the city or send your coordinates"
+msgstr "输入城市名称或发送你的坐标"
 
 #: tgbot/handlers/dialog.py:75
 msgid "Select the desired city"
-msgstr "Select the desired city"
+msgstr "选择所需的城市"
 
 #: tgbot/handlers/dialog.py:82
 msgid "I couldn't find a single city!"
-msgstr "I couldn't find a single city!"
+msgstr "我找不到一个城市！"
 
 #: tgbot/handlers/dialog.py:84
 msgid "Try changing the name of the city"
-msgstr "Try changing the name of the city"
+msgstr "尝试更改城市名称"
 
 #: tgbot/handlers/dialog.py:117
 msgid "Choose units of temperature measurement"
-msgstr "Choose units of temperature measurement"
+msgstr "选择温度计量单位"
 
 #: tgbot/handlers/dialog.py:144
 msgid "The weather setup is complete"
-msgstr "The weather setup is complete"
+msgstr "天气设置完成"
 
 #: tgbot/handlers/dialog.py:146
 msgid "The data will be updated automatically every 3 hours"
-msgstr "The data will be updated automatically every 3 hours"
+msgstr "数据将每3小时自动更新一次"
 
 #: tgbot/handlers/other.py:23
 msgid "is written in"
-msgstr "is written in"
+msgstr "写于"
 
 #: tgbot/handlers/other.py:25
 msgid "using the"
-msgstr "using the"
+msgstr "使用"
 
 #: tgbot/handlers/other.py:27
 msgid "library"
-msgstr "library"
+msgstr "库"
 
 #: tgbot/handlers/other.py:29
 msgid "Weather data provided by"
-msgstr "Weather data provided by"
+msgstr "天气数据由提供"
 
 #: tgbot/handlers/other.py:31
 msgid "Icon by"
-msgstr "Icon by"
+msgstr "图标由"
 
 #: tgbot/handlers/other.py:33
 msgid "on"
-msgstr "on"
+msgstr "于"
 
 #: tgbot/handlers/other.py:35
 msgid "The source code is available on"
-msgstr "The source code is available on"
+msgstr "源代码可在以下地址获得"
 
 #: tgbot/handlers/other.py:51
 msgid "All of your data has been deleted"
-msgstr "All of your data has been deleted"
+msgstr "你的所有数据已被删除"
 
 #: tgbot/keyboards/inline.py:24
 msgid "Select another city"
-msgstr "Select another city"
+msgstr "选择另一个城市"
 
 #: tgbot/keyboards/reply.py:14
 msgid "Send geolocation"
-msgstr "Send geolocation"
+msgstr "发送地理位置"
 
 #: tgbot/misc/commands.py:17
 msgid "Set weather forecast"
-msgstr "Set weather forecast"
+msgstr "设置天气预报"
 
 #: tgbot/misc/commands.py:18
 msgid "Bot info"
-msgstr "Bot info"
+msgstr "机器人信息"
 
 #: tgbot/misc/commands.py:19
 msgid "Stop bot and delete data"
-msgstr "Stop bot and delete data"
+msgstr "停止机器人并删除数据"
 
 #: tgbot/services/formatter.py:74
 msgid "of precipitation in one hour"
-msgstr "of precipitation in one hour"
+msgstr "在一小时内的降水量"
 
 #: tgbot/services/formatter.py:79
 msgid "gusts to"
-msgstr "gusts to"
+msgstr "阵风达"
 
 #: tgbot/services/formatter.py:86
 msgid "feels like"
-msgstr "feels like"
+msgstr "体感温度"
 
 #: tgbot/services/formatter.py:89
 msgid "Humidity"
-msgstr "Humidity"
+msgstr "湿度"
 
 #: tgbot/services/formatter.py:91
 msgid "Dew point"
-msgstr "Dew point"
+msgstr "露点"
 
 #: tgbot/services/formatter.py:94
 msgid "Wind speed"
-msgstr "Wind speed"
+msgstr "风速"
 
 #: tgbot/services/formatter.py:97
 msgid "Pressure"
-msgstr "Pressure"
+msgstr "气压"
 
 #: tgbot/services/formatter.py:100
 msgid "Visibility"
-msgstr "Visibility"
+msgstr "能见度"
 
 #: tgbot/services/formatter.py:103
 msgid "Sunrise"
-msgstr "Sunrise"
+msgstr "日出"
 
 #: tgbot/services/formatter.py:105
 msgid "Sunset"
-msgstr "Sunset"
+msgstr "日落"
 
 #: tgbot/services/weather.py:102
 msgid "Failed to obtain data about the current weather"
-msgstr "Failed to obtain data about the current weather"
+msgstr "未能获取当前天气数据"
 

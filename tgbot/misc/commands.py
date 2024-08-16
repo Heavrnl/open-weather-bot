@@ -17,6 +17,7 @@ async def set_default_commands(dp: Dispatcher) -> None:
                 BotCommand(command="start", description="▶️ " + _("Set weather forecast", locale=lang_code)),
                 BotCommand(command="about", description="ℹ️ " + _("Bot info", locale=lang_code)),
                 BotCommand(command="stop", description="⏹ " + _("Stop bot and delete data", locale=lang_code)),
+                BotCommand(command="get", description="⏹ get weather"),
             ],
             language_code=lang_code,
         )

@@ -16,7 +16,7 @@ _ = i18n.gettext  # Alias for gettext method
 async def if_admin_sent_command_stats(message: Message) -> None:
     """Shows statistics for administrators"""
     await message.delete()
-    user_lang_code: str = message.from_user.language_code
+    user_lang_code: str = 'zh_cn'
     api_counter: int = await database.get_api_counter_value()
     users_counter: int = await database.get_number_of_users()
     bot_answer_text: str = (
